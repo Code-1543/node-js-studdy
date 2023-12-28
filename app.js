@@ -1,6 +1,9 @@
 const express = require('express');
 const Product = require('./products.json')
+const path = require('path')
 const app = express()
+
+app.use(express.static(path.join(__dirname,"/plublic/")))
 
 app.get('/', (req, res) => {
   res.send('Hello World!123')
