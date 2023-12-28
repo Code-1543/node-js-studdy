@@ -5,8 +5,12 @@ const app = express()
 
 app.use(express.static(path.join(__dirname,"/plublic/")))
 
+app.set("views", "./src/views")
+app.set("view engine", "ejs")
+
+
 app.get('/', (req, res) => {
-  res.send('Hello World!123')
+  res.render('index',{username: "Win"})
   });
 
 const PORT = 3080
